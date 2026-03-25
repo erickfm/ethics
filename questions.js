@@ -111,7 +111,7 @@ const CATEGORIES = {
     description:
       "How you show up: mutual aid, organizing, and building alternatives to the systems above.",
     structural_context:
-      "The dominant critique of ethical consumption is that it substitutes individual shopping choices for collective political action, what Coffin & Egan-Wyer (2022) call the 'ethical consumption cap': there is a structural limit on what individual consumer choices can achieve. Shopping differently won't dismantle systems, but organized people can. Union membership stands at 10.0% (BLS, 2025). However, the NLRB lost its quorum for 345 days in 2025 after Trump fired board members, and union elections fell 30% (Center for American Progress). Despite this, 306,800 workers were idled in 30 major work stoppages in 2025, including historic victories: East Coast dockworkers won a 60%+ raise, Hilton Houston housekeepers won after a 40-day strike (the first hotel strike in Texas history), and the Pittsburgh Post-Gazette strike ended after three years. Note: collective action requires time and capacity, resources that are themselves unequally distributed. A single parent working two jobs has less bandwidth for organizing than a salaried professional with free evenings. This tool can't fully account for that.",
+      "The dominant critique of ethical consumption is that it substitutes individual shopping choices for collective political action, what Coffin & Egan-Wyer (2022) call the 'ethical consumption cap': there is a structural limit on what individual consumer choices can achieve. Shopping differently won't dismantle systems, but organized people can. Union membership stands at 10.0% (BLS, 2025). However, the NLRB lost its quorum for 345 days in 2025 after Trump fired board members, and union elections fell 30% (Center for American Progress). Despite this, 306,800 workers were idled in 30 major work stoppages in 2025, including historic victories: East Coast dockworkers won a 60%+ raise, Hilton Houston housekeepers won after a 40-day strike (the first hotel strike in Texas history), and the Pittsburgh Post-Gazette strike ended after three years. Collective action requires time and capacity, which are unequally distributed.",
     resources: [
       { name: "Big Door Brigade", url: "https://bigdoorbrigade.com", description: "Mutual aid toolbox and resources" },
       { name: "Mutual Aid Hub", url: "https://mutualaidhub.org", description: "Find mutual aid networks near you" },
@@ -542,8 +542,7 @@ const QUESTIONS = [
 //   1.0 = maximal complicity / active harm
 //   5.0 = active refusal and building alternatives
 //
-// These are rough placements, arguable and imperfect, meant to
-// make the scale legible through concrete reference points.
+// Concrete reference points for the scale.
 
 const HARM_BENCHMARKS = [
   // === Deep complicity (1.0 - 1.5) ===
@@ -750,31 +749,31 @@ const SCALE_POSITIONS = [
     range: [1, 1.8],
     label: "Default Settings",
     description:
-      "You're running on the operating system the empire installed. This isn't a moral failing; it's what the system is designed to produce. Most Americans are here on most axes. The defaults are convenient because enormous amounts of violence are spent making them convenient. Seeing this clearly is the first step, not guilt, but honest inventory.",
+      "Running on the defaults the system installed. Most Americans are here on most axes. The defaults are convenient because enormous amounts of violence are spent making them convenient.",
   },
   {
     range: [1.8, 2.6],
     label: "Aware but Embedded",
     description:
-      "You see the problems. You haven't yet changed much. This is the most common position for people who read the news, care about justice, and still live more or less within the default systems. The gap between knowing and doing is wide, and often has material reasons (money, time, access, exhaustion). The question is whether awareness is a resting place or a waypoint.",
+      "You see the problems. You haven't changed much. The gap between knowing and doing is wide, often for material reasons: money, time, access, exhaustion.",
   },
   {
     range: [2.6, 3.4],
     label: "Selective Friction",
     description:
-      "You've introduced friction into some of your defaults: changed banks, eat differently, show up sometimes, use different tools. But the changes are uneven. Some categories feel easy to shift; others feel locked in by circumstance or habit. This is normal and honest. The terrain isn't flat; leverage points are different for everyone.",
+      "You've introduced friction into some defaults: changed banks, eat differently, use different tools. The changes are uneven. Some categories shift easily; others are locked in by circumstance.",
   },
   {
     range: [3.4, 4.2],
     label: "Active Harm Reduction",
     description:
-      "You've made sustained, structural changes across multiple areas of your life. You're not performing ethics for an audience; you've reorganized material reality around reducing complicity. This often means accepting inconvenience, paying more, explaining yourself, and sometimes being wrong. The practice is the point, not the purity.",
+      "Sustained structural changes across multiple areas. You've reorganized material reality around reducing complicity: accepting inconvenience, paying more, opting out of default systems.",
   },
   {
     range: [4.2, 5],
     label: "Structural Refusal & Building",
     description:
-      "You're not just opting out; you're building alternatives. Co-ops, land trusts, mutual aid networks, organizing campaigns, alternative food systems, community defense. This position usually requires community, because it's nearly impossible alone, and individual refusal without collective infrastructure is just asceticism. The question at this level is: who else are you bringing with you?",
+      "Building alternatives: co-ops, land trusts, mutual aid networks, organizing campaigns, alternative food systems, community defense. This requires community. Individual refusal without collective infrastructure is asceticism.",
   },
 ];
 

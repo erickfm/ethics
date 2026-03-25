@@ -332,7 +332,7 @@
     let html = `<div class="graph-container" id="graph-container">`;
     html += `<div class="graph-header">`;
     html += `<p class="graph-title">The Harm Spectrum</p>`;
-    html += `<p class="graph-subtitle">Each dot is a consumer act. X axis: complicity score. Y axis: quantified life-years of harm (log scale). Click any dot for details.</p>`;
+    html += `<p class="graph-subtitle">Each dot is a consumer act. X: complicity score. Y: life-years of harm (log scale). Click any dot.</p>`;
     html += `</div>`;
     html += svg;
     html += `<div class="graph-tooltip hidden" id="graph-tooltip"></div>`;
@@ -389,7 +389,7 @@
     html += `</div>`; // harm-breakdown
 
     // Caveat
-    html += `<p class="composite-caveat">Calculated using conservative DALY, VSL, and Social Cost of Carbon frameworks from the WHO, EPA, and IPCC. We use $120/tonne SCC and $160K/VSLY; the Biden EPA finalized $255/tonne and HHS central VSLY is $604K, so actual harm is likely 2-4x this estimate. This represents structural complicity, not direct causation. You did not kill anyone. You participated in systems that produce these outcomes at population scale.</p>`;
+    html += `<p class="composite-caveat">Conversion: DALY, VSL, and Social Cost of Carbon frameworks (WHO, EPA, IPCC). Conservative estimate using $120/tonne SCC and $160K/VSLY. The Biden EPA finalized $255/tonne; HHS central VSLY is $604K. Actual harm is likely 2-4x this number.</p>`;
 
     html += `</div>`; // composite-harm
 
@@ -503,7 +503,7 @@
 
       let constraintNote = "";
       if (constrainedCount > 0) {
-        constraintNote = `<p class="constraint-note">You indicated that ${constrainedCount} of your ${categoryQuestionCount} responses here reflect systemic constraint rather than choice. The physical harm is the same; the complicity framing is different.</p>`;
+        constraintNote = `<p class="constraint-note">${constrainedCount} of ${categoryQuestionCount} responses here reflect systemic constraint. The harm output is the same regardless of intent.</p>`;
       }
 
       let resourceHtml = "";
