@@ -222,83 +222,133 @@
     return svg;
   }
 
-  // -- Interactive Harm Scale --
+  // -- Harm Spectrum Graph --
 
-  function renderInteractiveScale(overallAverage, catMin, catMax, quantifiedHarm) {
-    const sorted = [...HARM_BENCHMARKS].sort((a, b) => a.score - b.score);
-    const trackHeight = sorted.length * 65; // ~65px per item
+  function computeBenchmarkHarm(item) {
+    if (!item.harm) return 0;
+    const m = HARM_METHODOLOGY.pipelines;
+    return (item.harm.co2_kg / 1000) * m.carbon.factor +
+      (item.harm.exploited_labor_hrs || 0) * m.labor.factor +
+      (item.harm.military_dollars || 0) * m.military.factor +
+      (item.harm.carceral_dollars || 0) * m.carceral.factor +
+      (item.harm.surveillance_units || 0) * m.surveillance.factor;
+  }
 
-    let html = `<div class="scale-container" id="scale-container">`;
-    html += `<div class="scale-header">`;
-    html += `<p class="scale-title">The Harm Spectrum</p>`;
-    html += `<p class="scale-subtitle">Click any benchmark to explore. Scroll to see the full scale. Placements reflect editorial judgment, arguable by design.</p>`;
-    html += `</div>`;
+  function renderHarmGraph(overallAverage, catMin, catMax, quantifiedHarm) {
+    // Compute life-years for each benchmark
+    const points = HARM_BENCHMARKS.map((b) => ({
+      ...b,
+      lifeYears: computeBenchmarkHarm(b),
+      catName: CATEGORIES[b.category] ? CATEGORIES[b.category].name : "",
+    })).filter((p) => p.lifeYears > 0);
 
-    html += `<div class="scale-viewport">`;
-    html += `<div class="scale-track" style="height: ${trackHeight}px">`;
+    // Graph dimensions
+    const W = 700, H = 420;
+    const pad = { top: 30, right: 30, bottom: 55, left: 70 };
+    const gw = W - pad.left - pad.right;
+    const gh = H - pad.top - pad.bottom;
 
-    // Zone background bands
+    // X axis: complicity score 1-5
+    const xMin = 1, xMax = 5;
+    const x = (score) => pad.left + ((score - xMin) / (xMax - xMin)) * gw;
+
+    // Y axis: life-years (log scale)
+    const allLY = points.map((p) => p.lifeYears).filter((v) => v > 0);
+    const lyMin = Math.max(0.0001, Math.min(...allLY) * 0.5);
+    const lyMax = Math.max(...allLY) * 1.5;
+    const logMin = Math.log10(lyMin);
+    const logMax = Math.log10(lyMax);
+    const y = (ly) => pad.top + gh - ((Math.log10(Math.max(ly, lyMin)) - logMin) / (logMax - logMin)) * gh;
+
+    // Category colors
+    const catColors = {
+      labor: "#c4a35a",
+      ecology: "#4a8",
+      finance: "#7a9ec4",
+      food: "#8b6",
+      tech: "#a77dc2",
+      housing: "#c47a5a",
+      military_carceral: "#b44",
+      solidarity: "#5ac4a3",
+    };
+
+    let svg = `<svg viewBox="0 0 ${W} ${H}" class="harm-graph" xmlns="http://www.w3.org/2000/svg">`;
+
+    // Zone background bands (vertical strips for each complicity zone)
     for (const pos of SCALE_POSITIONS) {
-      const topPct = ((pos.range[0] - 1) / 4) * 100;
-      const heightPct = ((pos.range[1] - pos.range[0]) / 4) * 100;
-      html += `<div class="scale-zone" style="top: ${topPct}%; height: ${heightPct}%" data-zone="${pos.label}">`;
-      html += `<span class="scale-zone-label">${pos.label}</span>`;
-      html += `</div>`;
+      const x1 = x(pos.range[0]);
+      const x2 = x(pos.range[1]);
+      svg += `<rect x="${x1}" y="${pad.top}" width="${x2 - x1}" height="${gh}" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>`;
+      svg += `<text x="${(x1 + x2) / 2}" y="${pad.top + 12}" text-anchor="middle" class="graph-zone-label">${pos.label}</text>`;
     }
 
-    // Axis line
-    html += `<div class="scale-axis"></div>`;
-
-    // User range band
-    const userTopPct = ((catMin - 1) / 4) * 100;
-    const userHeightPct = ((catMax - catMin) / 4) * 100;
-    html += `<div class="scale-user-band" id="scale-user-band" style="top: ${userTopPct}%; height: ${Math.max(userHeightPct, 2)}%"></div>`;
-
-    // User marker (animated)
-    const userPct = ((overallAverage - 1) / 4) * 100;
-    html += `<div class="scale-user-marker" id="scale-user-marker" style="top: ${userPct}%">`;
-    html += `<div class="scale-user-content">`;
-    html += `<span class="scale-user-label">You</span>`;
-    html += `<span class="scale-user-detail">${quantifiedHarm.lifeYears.toFixed(2)} life-years of harm</span>`;
-    html += `</div>`;
-    html += `</div>`;
-
-    // Benchmark items
-    sorted.forEach((item, idx) => {
-      const topPct = ((item.score - 1) / 4) * 100;
-      const catName = CATEGORIES[item.category] ? CATEGORIES[item.category].name : "";
-      const sourceHtml = item.source ? `<span class="scale-source">[${item.source}]</span>` : "";
-
-      // Compute this benchmark's life-years if it has harm data
-      let harmText = "";
-      if (item.harm) {
-        const m = HARM_METHODOLOGY.pipelines;
-        const ly = (item.harm.co2_kg / 1000) * m.carbon.factor +
-          (item.harm.exploited_labor_hrs || 0) * m.labor.factor +
-          (item.harm.military_dollars || 0) * m.military.factor +
-          (item.harm.carceral_dollars || 0) * m.carceral.factor +
-          (item.harm.surveillance_units || 0) * m.surveillance.factor;
-        if (ly > 0.001) {
-          harmText = `<span class="scale-harm">${ly.toFixed(3)} life-years</span>`;
-        }
+    // Grid lines (horizontal, for Y axis log ticks)
+    const yTicks = [];
+    for (let exp = Math.floor(logMin); exp <= Math.ceil(logMax); exp++) {
+      for (const m of [1, 2, 5]) {
+        const val = m * Math.pow(10, exp);
+        if (val >= lyMin && val <= lyMax) yTicks.push(val);
       }
+    }
+    for (const tick of yTicks) {
+      const ty = y(tick);
+      svg += `<line x1="${pad.left}" y1="${ty}" x2="${W - pad.right}" y2="${ty}" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>`;
+      let label = tick >= 1 ? tick.toFixed(1) : tick >= 0.01 ? tick.toFixed(2) : tick.toFixed(4);
+      svg += `<text x="${pad.left - 8}" y="${ty + 3}" text-anchor="end" class="graph-axis-label">${label}</text>`;
+    }
 
-      html += `<div class="scale-item" style="top: ${topPct}%" data-idx="${idx}">`;
-      html += `<span class="scale-score">${item.score.toFixed(1)}</span>`;
-      html += `<div class="scale-item-summary">`;
-      html += `<span class="scale-act">${item.act}</span>`;
-      html += `<span class="scale-cat">${catName}</span>`;
-      html += `</div>`;
-      html += `<div class="scale-item-detail hidden">`;
-      html += `<p>${item.detail} ${sourceHtml}</p>`;
-      html += harmText;
-      html += `</div>`;
-      html += `</div>`;
+    // X axis ticks
+    for (let s = 1; s <= 5; s++) {
+      const tx = x(s);
+      svg += `<line x1="${tx}" y1="${pad.top}" x2="${tx}" y2="${H - pad.bottom}" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>`;
+      svg += `<text x="${tx}" y="${H - pad.bottom + 16}" text-anchor="middle" class="graph-axis-label">${s}</text>`;
+    }
+
+    // Axis labels
+    svg += `<text x="${W / 2}" y="${H - 8}" text-anchor="middle" class="graph-axis-title">Complicity Score</text>`;
+    svg += `<text x="14" y="${H / 2}" text-anchor="middle" transform="rotate(-90, 14, ${H / 2})" class="graph-axis-title">Life-Years of Harm</text>`;
+
+    // Benchmark dots
+    points.forEach((p, i) => {
+      const cx = x(p.score);
+      const cy = y(p.lifeYears);
+      const color = catColors[p.category] || "var(--text-muted)";
+      // Slight jitter to separate overlapping points
+      const jx = ((i * 7) % 11 - 5) * 0.8;
+      const jy = ((i * 13) % 11 - 5) * 0.8;
+      svg += `<circle cx="${cx + jx}" cy="${cy + jy}" r="4.5" fill="${color}" opacity="0.7" class="graph-dot" data-idx="${i}"/>`;
     });
 
-    html += `</div>`; // scale-track
-    html += `</div>`; // scale-viewport
-    html += `</div>`; // scale-container
+    // User point (larger, animated)
+    const userX = x(overallAverage);
+    const userY = y(quantifiedHarm.lifeYears);
+    svg += `<circle cx="${userX}" cy="${userY}" r="8" fill="none" stroke="var(--accent)" stroke-width="2" class="graph-user-ring"/>`;
+    svg += `<circle cx="${userX}" cy="${userY}" r="4" fill="var(--accent)" class="graph-user-dot"/>`;
+    svg += `<text x="${userX + 12}" y="${userY + 4}" class="graph-user-label">You (${quantifiedHarm.lifeYears.toFixed(2)})</text>`;
+
+    svg += `</svg>`;
+
+    // Build the full container with tooltip area
+    let html = `<div class="graph-container" id="graph-container">`;
+    html += `<div class="graph-header">`;
+    html += `<p class="graph-title">The Harm Spectrum</p>`;
+    html += `<p class="graph-subtitle">Each dot is a consumer act. X axis: complicity score. Y axis: quantified life-years of harm (log scale). Click any dot for details.</p>`;
+    html += `</div>`;
+    html += svg;
+    html += `<div class="graph-tooltip hidden" id="graph-tooltip"></div>`;
+
+    // Legend
+    html += `<div class="graph-legend">`;
+    for (const [key, color] of Object.entries(catColors)) {
+      const name = CATEGORIES[key] ? CATEGORIES[key].name : key;
+      html += `<span class="graph-legend-item"><span class="graph-legend-dot" style="background:${color}"></span>${name}</span>`;
+    }
+    html += `</div>`;
+
+    html += `</div>`;
+
+    // Store points data for tooltip lookups
+    window._graphPoints = points;
 
     return html;
   }
@@ -395,36 +445,40 @@
     `;
     $("#terrain-summary").innerHTML = overallHtml;
 
-    // 4. Interactive harm scale
-    $("#harm-scale-container").innerHTML = renderInteractiveScale(overallAverage, catMin, catMax, quantifiedHarm);
+    // 4. Harm spectrum graph
+    $("#harm-scale-container").innerHTML = renderHarmGraph(overallAverage, catMin, catMax, quantifiedHarm);
 
-    // Scale interaction: click to expand and auto-scroll to user
-    const scaleContainer = document.getElementById("scale-container");
-    if (scaleContainer) {
-      // Click to expand/collapse items
-      scaleContainer.addEventListener("click", (e) => {
-        const item = e.target.closest(".scale-item");
-        if (!item) return;
-        const detail = item.querySelector(".scale-item-detail");
-        const wasHidden = detail.classList.contains("hidden");
-        // Collapse all others
-        scaleContainer.querySelectorAll(".scale-item-detail").forEach(d => d.classList.add("hidden"));
-        scaleContainer.querySelectorAll(".scale-item").forEach(i => i.classList.remove("expanded"));
-        if (wasHidden) {
-          detail.classList.remove("hidden");
-          item.classList.add("expanded");
+    // Graph tooltip interaction
+    const graphContainer = document.getElementById("graph-container");
+    if (graphContainer) {
+      const tooltip = document.getElementById("graph-tooltip");
+      const svg = graphContainer.querySelector("svg");
+
+      svg.addEventListener("click", (e) => {
+        const dot = e.target.closest(".graph-dot");
+        if (!dot) {
+          tooltip.classList.add("hidden");
+          return;
         }
+        const idx = parseInt(dot.dataset.idx);
+        const p = window._graphPoints[idx];
+        if (!p) return;
+
+        const sourceHtml = p.source ? ` [${p.source}]` : "";
+        tooltip.innerHTML = `
+          <p class="tooltip-act">${p.act}</p>
+          <p class="tooltip-score">Score: ${p.score.toFixed(1)} | ${p.lifeYears.toFixed(3)} life-years | ${p.catName}</p>
+          <p class="tooltip-detail">${p.detail}${sourceHtml}</p>
+        `;
+        tooltip.classList.remove("hidden");
       });
 
-      // Auto-scroll to user marker after short delay
-      setTimeout(() => {
-        const marker = document.getElementById("scale-user-marker");
-        const viewport = scaleContainer.querySelector(".scale-viewport");
-        if (marker && viewport) {
-          const markerTop = marker.offsetTop;
-          viewport.scrollTo({ top: markerTop - viewport.clientHeight / 2, behavior: "smooth" });
+      // Close tooltip when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".graph-dot") && !e.target.closest(".graph-tooltip")) {
+          tooltip.classList.add("hidden");
         }
-      }, 600);
+      });
     }
 
     // 5. Category details
