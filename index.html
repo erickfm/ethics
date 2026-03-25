@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consumer Ethics Within Empire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Consumer Ethics Within Empire</h1>
+      <p class="subtitle">A harm reduction terrain map for living inside the machine</p>
+    </header>
+
+    <main>
+      <!-- ── Intro ─────────────────────────────────────── -->
+      <section id="intro" class="active">
+        <p>
+          Living inside the United States means participating in systems of
+          exploitation and harm: global supply chains, mass incarceration,
+          data surveillance, stolen land. Nobody opts out entirely. But
+          there's a spectrum between uncritical default and intentional
+          refusal.
+        </p>
+        <p>
+          This tool maps where your current choices fall on that spectrum.
+          Not to produce guilt, but to make the terrain visible. You can't
+          navigate what you can't see.
+        </p>
+        <p>
+          Some answer options account for <em>constraint</em>. A person
+          driving everywhere in rural Appalachia and a person driving
+          everywhere in Brooklyn are making different kinds of choices.
+          Where your options are limited by circumstance, the tool
+          recognizes that.
+        </p>
+        <p class="us-note">
+          This tool is specifically about consumer ethics within the United
+          States. The structural contexts, data, and resources are US-specific.
+          If you live elsewhere, the frameworks may resonate but the specifics
+          won't apply directly.
+        </p>
+        <p>
+          <a href="#" id="methodology-link" class="methodology-link">How this works &amp; what it's built on</a>
+        </p>
+        <br>
+        <button id="start-btn" class="btn-primary">Begin Assessment</button>
+      </section>
+
+      <!-- ── Methodology ───────────────────────────────── -->
+      <section id="methodology" class="hidden">
+        <h2>Methodology &amp; Frameworks</h2>
+
+        <h3>What this is</h3>
+        <p>
+          A self-assessment tool that maps your consumer and civic choices
+          across eight dimensions of complicity within the US political
+          economy. It quantifies your annual complicity in life-years of
+          harm, using conversion frameworks from the WHO, EPA, and IPCC.
+        </p>
+
+        <h3>What this is not</h3>
+        <p>
+          This is not a moral report card. It cannot capture the full
+          complexity of anyone's life. It does not account for the labor
+          of care, the weight of survival, or the thousand compromises that
+          people make to get through the day. It is a rough instrument for
+          a rough terrain.
+        </p>
+
+        <h3>Quantified harm: the life-years model</h3>
+        <p>
+          Each answer you give maps to quantified annual impacts: tonnes of
+          CO&#8322; emitted, hours of exploited labor purchased, dollars
+          flowing to military and carceral systems. These are converted into
+          a composite unit, "life-years of harm," using four pipelines:
+        </p>
+        <ul>
+          <li>
+            <strong>Carbon to life-years:</strong> Using a conservative Social
+            Cost of Carbon ($120/tonne; Biden EPA finalized $255/tonne in 2023,
+            Trump administration is revisiting) and Value of a Statistical Life
+            Year (~$160K; HHS 2025 central estimate is $604K at 3% discount),
+            each tonne of CO&#8322; converts to 0.00075 life-years. Consistent
+            with Bressler (2021, Nature Communications): 1 excess death per
+            4,434 tonnes. The actual harm is likely 2-4x higher than our
+            conservative estimate.
+          </li>
+          <li>
+            <strong>Exploited labor to life-years:</strong> Based on GBD 2019
+            occupational injury DALY estimates for high-risk sectors, each hour
+            of labor at exploitative conditions converts to approximately
+            0.001 life-years.
+          </li>
+          <li>
+            <strong>Military spending to life-years:</strong> Using Brown
+            University's Costs of War data (940,000+ direct deaths and 4.5-4.7
+            million total deaths from post-9/11 wars, $8 trillion spent), each
+            dollar converts to 0.000000116 life-years.
+          </li>
+          <li>
+            <strong>Carceral spending to life-years:</strong> Proportional
+            to the 1.9 million person-years of incarceration the US system
+            produces annually (Sentencing Project; Vera Institute). ICE
+            detention surged 84% to 73,000 in January 2026, with DHS aiming
+            for 100,000 capacity (Prison Policy Initiative, Whole Pie 2026).
+          </li>
+        </ul>
+        <p>
+          These conversions are standard in public health economics. The
+          application to individual consumer behavior involves editorial
+          judgment. The numbers represent structural complicity, not direct
+          causation.
+        </p>
+
+        <h3>Theoretical foundations</h3>
+        <p>
+          The framing draws on several bodies of scholarship and organizing
+          tradition:
+        </p>
+        <ul>
+          <li>
+            <strong>The Imperial Mode of Living</strong> (Ulrich Brand &amp;
+            Markus Wissen): everyday consumption in the Global North is
+            structurally dependent on exploitation of the Global South.
+            <span class="source-cite">Verso, 2021</span>
+          </li>
+          <li>
+            <strong>Against Purity</strong> (Alexis Shotwell) argues that
+            complicity is universal and should lead to solidarity and action,
+            not paralysis or purity politics.
+            <span class="source-cite">University of Minnesota Press, 2016</span>
+          </li>
+          <li>
+            <strong>Ethical Consumer Research Association</strong>, the most
+            comprehensive existing methodology for rating ethical dimensions
+            of consumption, using 19 categories across environment, people,
+            animals, and politics.
+            <span class="source-cite">ethicalconsumer.org</span>
+          </li>
+          <li>
+            <strong>Movement Generation's Just Transition Framework</strong>,
+            mapping the shift from extractive to regenerative economies.
+            <span class="source-cite">movementgeneration.org</span>
+          </li>
+          <li>
+            <strong>Capitalism in the Web of Life</strong> (Jason W. Moore)
+            examines how "cheap nature" (cheap labor, food, energy, care)
+            subsidizes Global North consumption.
+            <span class="source-cite">Verso, 2015</span>
+          </li>
+          <li>
+            <strong>Carceral Capitalism</strong> (Jackie Wang) shows how
+            financial extraction and surveillance function as forms of
+            consumption that target racialized communities.
+            <span class="source-cite">Semiotext(e), 2018</span>
+          </li>
+        </ul>
+
+        <h3>Known limitations</h3>
+        <ul>
+          <li>
+            <strong>The individualism problem:</strong> This tool focuses on
+            individual choices within systems that are structurally
+            determined. The most ethical consumer in the world cannot
+            shop their way out of empire. Collective action (organizing,
+            mutual aid, political struggle) is where structural change
+            actually comes from. That's why "Solidarity &amp; Collective
+            Action" is a category, not an afterthought.
+          </li>
+          <li>
+            <strong>The class problem:</strong> Many "ethical" choices cost
+            more money, more time, or more access. Scoring higher on this
+            tool can partly measure privilege rather than virtue. Where
+            possible, answer options distinguish between constraint and
+            choice, but imperfectly.
+          </li>
+          <li>
+            <strong>The purity problem:</strong> Any scale risks becoming a
+            purity test. That's not the intent. Harm reduction is an ongoing
+            practice, imperfect and responsive to material conditions. If
+            this tool makes you feel guilty rather than informed, it's
+            failing.
+          </li>
+          <li>
+            <strong>The data problem:</strong> This is a self-assessment, not
+            an audit. It measures self-reported behavior and awareness, which
+            are imperfect proxies for actual impact.
+          </li>
+          <li>
+            <strong>Missing domains:</strong> This tool does not cover
+            healthcare and pharmaceutical complicity, education and student
+            debt as extraction, or the unpaid digital labor you perform for
+            platforms (content creation, data generation, community
+            moderation). These are significant dimensions of consumer ethics
+            within empire that future versions should address.
+          </li>
+        </ul>
+
+        <h3>The harm benchmark scale</h3>
+        <p>
+          The benchmark scale plots concrete, recognizable acts on the same
+          spectrum as your results. <strong>The score assigned to each
+          benchmark is an editorial judgment, not a calculated output.</strong>
+          We cite data to make the harm visible and verifiable, but mapping
+          that harm onto a 1-5 scale requires value judgments that we make
+          transparently. These placements are arguable; that's by design.
+        </p>
+
+        <h3>Data sources</h3>
+        <p>
+          Every quantitative claim in this tool traces to a specific source.
+          Key data sources include:
+        </p>
+        <ul>
+          <li><strong>Emissions:</strong> EPA Greenhouse Gas data; Poore &amp;
+            Nemecek (2018), <em>Science</em>; CDP/Climate Accountability
+            Institute; Oxfam (2023); carbonindependent.org</li>
+          <li><strong>Banking &amp; finance:</strong> Banking on Climate Chaos
+            (2025); Fossil Free Funds/Invest Your Values (As You Sow);
+            CDP Scope 3 Technical Note</li>
+          <li><strong>Labor:</strong> Human Rights Watch, "The Gig Trap"
+            (2025); UC Berkeley Labor Center (2024); US Senate HELP Committee
+            Amazon investigation; BLS Census of Fatal Occupational Injuries;
+            CEPR/EPI on tipped wages</li>
+          <li><strong>Harm conversion:</strong> Bressler (2021, Nature
+            Communications); Rennert et al. (2022, Nature); EPA Value of
+            Statistical Life; GBD 2019 (IHME); Brown University Costs of
+            War project</li>
+          <li><strong>Incarceration:</strong> ACLU, "Captive Labor"; EPI,
+            "Rooted in Racism"; Sentencing Project; Vera Institute;
+            Prison Policy Initiative, Whole Pie 2026</li>
+          <li><strong>Military:</strong> SIPRI (2025); IPS Tax Day Receipt;
+            War Resisters League FY2026; State Department FY2025 arms
+            transfers; Brown University Costs of War (updated 2025)</li>
+          <li><strong>Surveillance:</strong> Schmidt/Vanderbilt Google Data
+            Collection (2018); Consumer Reports/The Markup (2024); EFF;
+            American Immigration Council on Palantir/ICE</li>
+          <li><strong>Housing:</strong> Barron, Kung &amp; Proserpio,
+            <em>Marketing Science</em> (2021); PE Stakeholder Project</li>
+        </ul>
+        <p>
+          Full reference list with URLs is maintained in the project's
+          <code>ref.txt</code> file and will be published as a dedicated
+          sources page.
+        </p>
+
+        <br>
+        <button id="methodology-back" class="btn-secondary">Back</button>
+      </section>
+
+      <!-- ── Questionnaire ─────────────────────────────── -->
+      <section id="questionnaire" class="hidden">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="question-counter" id="question-counter"></div>
+        <div id="question-area"></div>
+        <div class="nav-buttons">
+          <button id="prev-btn" class="btn-secondary hidden">Back</button>
+          <button id="next-btn" class="btn-primary">Next</button>
+        </div>
+      </section>
+
+      <!-- ── Results ───────────────────────────────────── -->
+      <section id="results" class="hidden">
+        <h2>Your Terrain</h2>
+        <p class="results-framing">
+          This is a map, not a verdict. It shows where you're standing
+          within systems you didn't design but participate in daily.
+          What you do with this information is up to you.
+        </p>
+
+        <div id="composite-harm-container"></div>
+
+        <div class="radar-container" id="radar-container"></div>
+
+        <div class="terrain-summary" id="terrain-summary"></div>
+
+        <div id="harm-scale-container"></div>
+
+        <p class="category-details-header">
+          Expand each category for structural context and resources:
+        </p>
+        <div id="category-details"></div>
+
+        <div class="acknowledgment">
+          <p>
+            "There is no ethical consumption under capitalism" is true.
+            And: your choices still matter. Both things.
+          </p>
+          <p>
+            This tool cannot tell you what to do. It can show you the
+            terrain: where the system's grip is tightest, where you've
+            already created friction, and where collective action might
+            have leverage. Harm reduction is a practice, not a destination.
+            The question is never "am I pure?" It's "what am I willing
+            to do next?"
+          </p>
+        </div>
+
+        <br>
+        <button id="restart-btn" class="btn-secondary">Start Over</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        A tool for reflection, not judgment. Harm reduction is a practice,
+        not a destination.
+      </p>
+    </footer>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

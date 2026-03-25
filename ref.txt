@@ -1,0 +1,263 @@
+# Reference Sources
+# Consumer Ethics Within Empire  - Harm Reduction Tool
+# All claims in the tool must trace back to sources listed here.
+
+## ── Emissions & Ecological Extraction ──────────────────────
+
+# EPA  - Greenhouse Gas Emissions from a Typical Passenger Vehicle (4.6 metric tons CO2/year)
+https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle
+
+# EPA  - Greenhouse Gas Equivalencies Calculator
+https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator-calculations-and-references
+
+# Poore & Nemecek (2018), "Reducing food's environmental impacts," Science 360(6392)
+# (beef = 60 kg CO2e/kg; vegan saves ~1 tonne CO2/year)
+https://www.science.org/doi/10.1126/science.aaq0216
+
+# Our World in Data  - Environmental Impacts of Food Production
+https://ourworldindata.org/environmental-impacts-of-food
+
+# carbonindependent.org  - Aviation Emissions (~0.25 tonnes CO2e/passenger/hour)
+https://www.carbonindependent.org/22.html
+
+# Nature (2025)  - Aviation Passenger Carbon Footprint Calculator
+https://www.nature.com/articles/s43247-025-02847-4
+
+# CDP/Climate Accountability Institute (2017)  - Carbon Majors Report (100 companies = 71% industrial GHGs)
+https://cdn.cdp.net/cdp-production/cms/reports/documents/000/002/327/original/Carbon-Majors-Report-2017.pdf
+
+# CDP  - Scope 3 Technical Note
+https://cdn.cdp.net/cdp-production/cms/guidance_docs/pdfs/000/003/504/original/CDP-technical-note-scope-3-relevance-by-sector.pdf
+
+# BP "carbon footprint" origin  - Ogilvy & Mather campaign (2004), >$100M/year on "Beyond Petroleum"
+https://greenisthenewblack.com/carbon-footprint-bp/
+
+# Oxfam (2023)  - "Carbon Inequality Kills" (richest 1% = poorest 2/3 of humanity in emissions)
+https://www.oxfam.org/en/press-releases/richest-1-emit-much-planet-heating-pollution-two-thirds-humanity
+
+# Global Footprint Network  - Open Data (ecological footprint per capita by country)
+https://data.footprintnetwork.org/
+
+
+## ── Financial Complicity ───────────────────────────────────
+
+# Banking on Climate Chaos 2025 (RAN, Sierra Club, et al.)
+# ($869B to fossil fuels in 2024; $6.9T+ cumulative since Paris; JPMorgan = $53.5B in 2024)
+https://www.bankingonclimatechaos.org/
+
+# RAN  - BOCC 2025 press release
+https://www.ran.org/press-releases/bocc2025/
+
+# Fossil Free Funds (As You Sow)  - How It Works (A-F grading, auto-F for prison operators)
+https://fossilfreefunds.org/how-it-works
+
+# Invest Your Values  - Methodology (fossil fuels, weapons, prisons, deforestation, gender)
+https://investyourvalues.org/methodology
+
+
+## ── Labor Exploitation ─────────────────────────────────────
+
+# Human Rights Watch (2025)  - "The Gig Trap" (median gig pay $5.12/hr after expenses)
+https://www.hrw.org/report/2025/05/12/the-gig-trap/algorithmic-wage-and-labor-exploitation-in-platform-work-in-the-us
+
+# UC Berkeley Labor Center (2024)  - Gig Driver Pay ($5.97/hr after expenses in CA)
+https://laborcenter.berkeley.edu/wp-content/uploads/2024/05/Gig-Passenger-and-Delivery-Driver-Pay-in-Five-Metro-Areas.pdf
+
+# CEPR  - Tipped Minimum Wage ($2.13/hr since 1991)
+https://cepr.net/publications/tipped-minimum-wage/
+
+# EPI  - "Waiting for Change" (tipped wage frozen since 1996 FLSA amendment)
+https://www.epi.org/publication/waiting-for-change-tipped-minimum-wage/
+
+# US Senate HELP Committee  - Amazon Warehouse Investigation (6.5/100 injury rate, 71% above non-Amazon)
+https://www.help.senate.gov/imo/media/doc/amazon_investigation.pdf
+
+# Strategic Organizing Center  - "Failure to Deliver" (Amazon injury rates)
+https://thesoc.org/resources/failure-to-deliver-amazon-falls-short-on-safety/
+
+# BLS  - Census of Fatal Occupational Injuries 2024 (5,070 deaths, 3.3/100K FTE)
+https://www.bls.gov/news.release/cfoi.nr0.htm
+
+# ACLU  - "Captive Labor" (prison wages 13-52¢/hr, 7 states pay $0, $11B/year in goods)
+https://www.aclu.org/news/human-rights/captive-labor-exploitation-of-incarcerated-workers
+
+# EPI  - "Rooted in Racism: Prison Labor"
+https://www.epi.org/publication/rooted-racism-prison-labor/
+
+
+## ── Military & Carceral ────────────────────────────────────
+
+# SIPRI (2025)  - World Military Expenditure 2024 ($997B US, 40% of global, more than next 9 combined)
+https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024
+
+# IPS  - 2025 Tax Day Receipt ($3,707/taxpayer to military)
+https://ips-dc.org/release-2025-tax-day-receipt/
+
+# War Resisters League  - FY2025 Pie Chart (total military-related = $1,191B)
+https://www.warresisters.org/sites/default/files/fy2025_pie_chart.pdf
+
+# Sentencing Project  - Mass Incarceration Trends (1.9M incarcerated, 5x racial disparity)
+https://www.sentencingproject.org/reports/mass-incarceration-trends/
+
+# Vera Institute  - "The Price of Prisons" ($33,274/year avg; NY = $115K/year)
+https://www.vera.org/publications/price-of-prisons-what-incarceration-costs-taxpayers
+
+# Prison Policy Initiative  - FCC Rate Cap Reversal (phone costs $0.18/min+)
+https://www.prisonpolicy.org/blog/2025/07/02/fcc-reversal/
+
+
+## ── Technology & Surveillance ──────────────────────────────
+
+# Schmidt/Vanderbilt (2018)  - "Google Data Collection" (340 location pings/day from idle Android)
+https://www.dre.vanderbilt.edu/~schmidt/PDF/google-data-collection.pdf
+
+# Consumer Reports/The Markup (2024)  - Facebook monitoring (avg 2,230 companies per user)
+https://themarkup.org/privacy/2024/01/17/each-facebook-user-is-monitored-by-thousands-of-companies-study-indicates
+
+# EFF  - Ring/Police Access (ended direct requests 2024, warrants still work)
+https://www.eff.org/deeplinks/2024/01/ring-announces-it-will-no-longer-facilitate-police-requests-footage-users
+
+# American Immigration Council  - Palantir/ICE "ImmigrationOS" ($30M contract)
+https://www.americanimmigrationcouncil.org/blog/ice-immigrationos-palantir-ai-track-immigrants/
+
+
+## ── Housing & Land ─────────────────────────────────────────
+
+# Barron, Kung & Proserpio (2021), Marketing Science  - Airbnb effect (+0.018% rents, +0.026% prices per 1% listings increase)
+https://pubsonline.informs.org/doi/10.1287/mksc.2020.1227
+
+# PE Stakeholder Project  - Private Equity owns 10%+ of US apartments (2.2M units)
+https://pestakeholder.org/news/new-analysis-reveals-private-equity-firms-own-at-least-10-of-all-u-s-apartments/
+
+
+## ── AI & Tech Labor (from Jacobin/Hao) ────────────────────
+
+# Jacobin (2025)  - "Sam Altman's AI Empire Relies on Brutal Labor Exploitation" (review of Karen Hao's Empire of AI)
+# AI energy: could consume more energy than India by 2030; Microsoft 11.5M tonnes water in Iowa drought
+https://jacobin.com/2025/07/altman-openai-artificial-intelligence-labor-environment-deepseek
+
+
+## ── Scoring Methodologies ──────────────────────────────────
+
+# ECRA/Ethical Consumer  - Ethiscore ratings (100-point scale, 50K+ companies)
+https://www.ethicalconsumer.org/about-us/our-ethical-ratings
+
+# B Lab  - BIA Scoring Methodology (80/250+ to certify)
+https://kb.bimpactassessment.net/en/support/solutions/articles/43000575263-how-the-b-impact-assessment-is-scored
+
+# KnowTheChain  - Forced Labor Benchmark Methodology 2022-2023 (145 companies, 7 themes)
+https://knowthechain.org/benchmark-methodology/2022-2023
+
+# ISO 14075:2024  - Social Life Cycle Assessment (first international standard for S-LCA)
+https://www.iso.org/standard/61118.html
+
+# UNEP  - Guidelines for Social Life Cycle Assessment of Products
+https://www.unep.org/resources/report/guidelines-social-life-cycle-assessment-products
+
+# Springer  - ISO 14075 Commentary
+https://link.springer.com/article/10.1007/s11367-025-02522-y
+
+
+## ── Critical Methodology & Theory ──────────────────────────
+
+# Martinez-Alier et al. (1998)  - "Weak comparability of values" (incommensurability; multi-criteria evaluation)
+https://www.sciencedirect.com/science/article/abs/pii/S0921800997001201
+
+# Coffin & Egan-Wyer (2022)  - "The ethical consumption cap" (structural limit on individual consumer ethics)
+https://journals.sagepub.com/doi/10.1177/14705931211058772
+
+# Budolfson (2023)  - "Consumer Complicity and the Problem of Individual Causal Efficacy"
+https://www.researchgate.net/publication/369570654_Consumer_Complicity_and_the_Problem_of_Individual_Causal_Efficacy
+
+# Arman et al. (2024)  - "Ethical Consumption: A Review and Research Agenda," IJCS
+https://onlinelibrary.wiley.com/doi/10.1111/ijcs.13079
+
+# ScienceDirect (unresolvable PII  - may be retracted or not yet indexed)
+https://www.sciencedirect.com/science/article/pii/S1462901124001126
+
+
+## ── 2025-2026 Updates ────────────────────────────────────
+
+# Global Carbon Budget 2025: Fossil CO2 emissions record 38.1B tonnes in 2025
+https://globalcarbonbudget.org/fossil-fuel-co2-emissions-hit-record-high-in-2025/
+
+# WMO: Three-year average (2023-2025) broke 1.5C for first time
+https://wmo.int/news/media-centre/wmo-confirms-2025-was-one-of-warmest-years-record
+
+# Oxfam (January 2026): Richest 1% emit 75.1 tonnes/person/year, exhausted 2026 budget in 10 days
+https://www.oxfam.org/en/press-releases/richest-1-have-blown-through-their-fair-share-carbon-emissions-2026-just-10-days
+
+# Nature Sustainability (2025): AI carbon footprint 32.6-79.7M tonnes CO2 in 2025
+https://www.nature.com/articles/s41893-025-01681-y
+
+# One Big Beautiful Bill Act: IRA clean energy credit terminations
+https://www.irs.gov/newsroom/one-big-beautiful-bill-provisions
+
+# UIC CUED (2025): 41% of Amazon warehouse workers report injuries; 69% take unpaid time off
+https://cued.uic.edu/pain-points/
+
+# Wire China: UFLPA enforcement collapsed 87% ($1.4B to $178M in 2025)
+https://www.thewirechina.com/2026/03/15/has-trump-shelved-the-uyghur-forced-labor-law/
+
+# Center for American Progress: NLRB quorum lost 345 days, union elections fell 30%
+https://www.americanprogress.org/article/nlrb-overseen-union-elections-fell-in-2025-amid-trump-administration-attacks/
+
+# War Resisters League FY2026: Current military $1,194B, past military $1,415B
+https://www.warresisters.org/wp-content/uploads/2025/03/FY2026-pie-chart-for-web.pdf
+
+# State Dept FY2025: $331B in US arms sales, 42% of global transfers
+https://www.state.gov/releases/bureau-of-political-military-affairs/2026/03/fiscal-year-2025-u-s-arms-transfers-and-defense-trade/
+
+# SIPRI: US supplied 42% of international arms transfers in 2021-2025
+https://www.sipri.org/media/press-release/2026/global-arms-flows-jump-nearly-10-cent-european-demand-soars
+
+# Military.com: $21.7B in US military aid to Israel since October 2023
+https://www.military.com/daily-news/2025/10/07/us-has-given-least-217-billion-military-aid-israel-war-gaza-began-report-says.html
+
+# Prison Policy Initiative, Whole Pie 2026: ICE detention surged 84% to 73,000
+https://www.prisonpolicy.org/reports/pie2026.html
+
+# Prison Policy Initiative: FCC prison phone rate caps 83% higher than 2024 rules
+https://www.prisonpolicy.org/blog/2025/10/30/fcc-new-caps/
+
+# Brown University Costs of War (updated 2025): 940,000+ direct deaths, 4.5-4.7M total
+https://costsofwar.watson.brown.edu/findings
+
+# Yale Budget Lab: Tariffs as regressive tax, $1,000-$1,300 per household
+https://budgetlab.yale.edu/research/tracking-economic-effects-tariffs
+
+# Bressler 2025: Updated SCC range $237-$3,567/tonne
+https://static1.squarespace.com/static/59bf26af29f187c6f3a9fbbf/t/678f111666f6b97afdd39e9c/1737429272631/JMP.pdf
+
+# HHS 2025: VSLY $604K at 3% discount, VSL $13.2M
+https://aspe.hhs.gov/sites/default/files/documents/639756a60fbe7e51786bcec176ad52f1/Standard-RIA-Values-2025.pdf
+
+# Clearview AI: $10M federal contract (September 2025)
+https://www.cnbc.com/2026/03/09/anthropic-was-the-pentagons-choice-for-ai-now-its-banned-and-experts-are-worried.html
+
+# Ring/Flock Safety partnership (Oct 2025, cancelled Feb 2026)
+https://techcrunch.com/2025/10/16/amazons-ring-to-partner-with-flock-a-network-of-ai-cameras-used-by-ice-feds-and-police/
+
+# CalMatters: H-2A visa wage cuts transferring $1.7B from workers to employers
+https://calmatters.org/justice/2026/03/farmworker-h2a-wages/
+
+# Labor Notes 2025 review: 306,800 workers in 30 major stoppages
+https://labornotes.org/2025/12/2025-review-stark-battle-lines-big-potential
+
+# California Delete Act (SB 361) / DROP platform: Data broker deletion
+https://cppa.ca.gov/data_brokers/
+
+# KnowTheChain 2025 ICT Benchmark: Average score 20/100
+https://www.business-humanrights.org/en/from-us/briefings/2025-knowthechain-ict-benchmark/
+
+# Rhodium Group: US emissions increased in 2025 (buildings +6.8%, power +3.8%)
+https://rhg.com/research/us-greenhouse-gas-emissions-2025/
+
+
+## ── Books (theoretical foundations) ────────────────────────
+
+# Brand & Wissen (2021)  - The Imperial Mode of Living. Verso.
+# Shotwell (2016)  - Against Purity: Living Ethically in Compromised Times. U of Minnesota Press.
+# Moore (2015)  - Capitalism in the Web of Life. Verso.
+# Wang (2018)  - Carceral Capitalism. Semiotext(e).
+# Hao (2025)  - Empire of AI: Dreams and Nightmares in Sam Altman's OpenAI.
