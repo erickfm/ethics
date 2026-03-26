@@ -508,7 +508,7 @@
 
       let resourceHtml = "";
       if (cat.resources && cat.resources.length) {
-        resourceHtml = `<div class="category-resources"><p class="resources-label">Where to go from here:</p><ul>`;
+        resourceHtml = `<div class="category-resources"><p class="resources-label">Related organizations:</p><ul>`;
         for (const r of cat.resources) {
           resourceHtml += `<li><a href="${r.url}" target="_blank" rel="noopener"><strong>${r.name}</strong></a>: ${r.description}</li>`;
         }
